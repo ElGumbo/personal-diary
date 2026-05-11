@@ -1,12 +1,11 @@
 import "./App.css";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis fugit
-      nostrum accusamus odit ratione nemo dolore mollitia dignissimos at hic
-      est, eligendi cupiditate officia sit cum et error esse maiores?
-    </div>
+    <>
+      <Header />
+    </>
   );
 }
 
