@@ -8,7 +8,7 @@ export default function EntryList({ entries }) {
   const [selectedEntry, setSelectedEntry] = useState(null);
 
   return (
-    <div className='grid grid-cols-[repeat(auto-fill,minmax(24rem,1fr))] gap-6 p-20'>
+    <div className='grid grid-cols-[repeat(auto-fill,minmax(24rem,1fr))] gap-6 p-8 md:p-20 bg-gray-100 h-screen'>
       {allEntries.map((entry) => (
         <EntryCard
           key={entry.date}
