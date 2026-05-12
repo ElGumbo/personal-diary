@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export default function EntryForm() {
+export default function EntryForm({ onAddEntry }) {
   const [formData, setFormData] = useState({
     title: "",
     date: "",
@@ -9,12 +9,12 @@ export default function EntryForm() {
     content: "",
   });
 
+  const [error, setError] = useState("");
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setError("");
   };
-
-  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,9 +39,8 @@ export default function EntryForm() {
       setError("Entry for that date already exists!");
       return;
     }
-    setError("");
-    diaryEntries.push(formData);
-    localStorage.setItem("diaryEntries", JSON.stringify(diaryEntries));
+
+    onAddEntry(formData);
   };
 
   return (

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import EntryForm from "./EntryForm";
 
-export default function Header() {
+export default function Header({ onAddEntry  }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -15,7 +15,7 @@ export default function Header() {
       {isOpen && (
         <div className="modal modal-open">
           <div className="modal-box">
-            <EntryForm />
+            <EntryForm onAddEntry={onAddEntry} />
             <div className="modal-action">
               <button className="btn" onClick={() => setIsOpen(false)}>Close</button>
             </div>
